@@ -191,7 +191,7 @@ jobs:
         echo "release_tag=$(date +"%Y.%m.%d-%H.%M")-${{ matrix.ARCHITECTURE }}" >> ${GITHUB_OUTPUT}
         touch release.txt
         echo "
-        📐 架构: ${{ matrix.ARCHITECTURE }}
+        🖥️ 架构: ${{ matrix.ARCHITECTURE }}
 
         🔀 分支: ${{ matrix.REPO_BRANCH }}
 
