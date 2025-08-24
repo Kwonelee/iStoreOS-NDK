@@ -197,7 +197,7 @@ jobs:
 
         📂 源码: ${{ env.REPO_URL }}
 
-        ⏱️ 编译时间: $(date +"%Y年%m月%d日%H时%M分")
+        🕒 编译时间: $(date +"%Y年%m月%d日%H时%M分")
 
         👤 用户名: root
 
