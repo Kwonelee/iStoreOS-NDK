@@ -79,6 +79,14 @@ jobs:
            sed -i 's/^CONFIG_PACKAGE_uqmi=y/# CONFIG_PACKAGE_uqmi is not set/' ./armv8/.config
            sed -i 's/^CONFIG_PACKAGE_wireguard-tools=y/# CONFIG_PACKAGE_wireguard-tools is not set/' ./armv8/.config
            sed -i 's/^CONFIG_PACKAGE_wwan=y/# CONFIG_PACKAGE_wwan is not set/' ./armv8/.config
+           
+           sed -i 's/^CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddns-zh-cn is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_PACKAGE_luci-i18n-filetransfer-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-filetransfer-zh-cn is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_PACKAGE_luci-i18n-linkease-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-linkease-zh-cn is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_PACKAGE_luci-i18n-mergerfs-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-mergerfs-zh-cn is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-oaf-zh-cn is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_PACKAGE_luci-i18n-ota-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ota-zh-cn is not set/' ./armv8/.config
            # ----结束
            echo -e "\\n$configdata" >> ./armv8/.config
            # 清除.config配置文件里面重复的配置项
