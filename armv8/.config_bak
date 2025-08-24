@@ -863,3 +863,4 @@ CONFIG_PACKAGE_libmbedtls=y
 # CONFIG_VERSION_CODE_FILENAMES is not set
 # CONFIG_VERSION_FILENAMES is not set
 CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_firefly_station-m2=y
+CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_rk3399_tvi3315a=y
