@@ -45,7 +45,7 @@ echo -e "\\ndefine Device/rk3399_tvi3315a
   DEVICE_VENDOR := Rockchip
   DEVICE_MODEL := tvi3315a
   SOC := rk3399
-  SUPPORTED_DEVICES := rk3399,tvi3315a
+  SUPPORTED_DEVICES := rockchip,rk3399-tvi3315a
   DEVICE_DTS := rockchip/rk3399-tvi3315a
   UBOOT_DEVICE_NAME := tvi3315a-rk3399
   IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
