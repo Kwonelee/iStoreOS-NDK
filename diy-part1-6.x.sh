@@ -22,7 +22,7 @@ if [ -n "$hash_value" ] && [[ "$hash_value" =~ ^[0-9a-f]{32}$ ]]; then
     echo "kernel内核md5校验码：$hash_value"
 fi
 
-# 修改版本为编译日期，数字类型。
+# 修改版本为编译日期，数字类型
 date_version=$(date +"%Y%m%d%H")
 echo $date_version > version
 
