@@ -25,7 +25,7 @@
 #chmod 755 package/base-files/files/bin/coremark
 #chmod 755 package/base-files/files/bin/coremark.sh
 
-# 集成m2无线
+# 集成无线
 mkdir -p package/base-files/files/lib/firmware/brcm/
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
