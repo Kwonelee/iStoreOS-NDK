@@ -49,6 +49,7 @@ echo -e "\\ndefine Device/rk3399_tvi3315a
   DEVICE_DTS := rockchip/rk3399-tvi3315a
   UBOOT_DEVICE_NAME := tvi3315a-rk3399
   IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-r8169
 endef
 TARGET_DEVICES += rk3399_tvi3315a" >> target/linux/rockchip/image/legacy.mk
 
