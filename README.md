@@ -1,7 +1,7 @@
 # OP-NDK
 
 # 🤔Introduce
-> **仅自用**
+> **For personal use only**
 
 # 🙏Thanks
 - [istoreos](https://github.com/istoreos/istoreos)
