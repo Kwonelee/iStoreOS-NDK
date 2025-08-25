@@ -191,19 +191,13 @@ jobs:
         echo "release_tag=$(date +"%Y.%m.%d-%H.%M")-${{ matrix.ARCHITECTURE }}" >> ${GITHUB_OUTPUT}
         touch release.txt
         echo "
-        🖥️ 架构: ${{ matrix.ARCHITECTURE }}
+        🖥️ Architecture: ${{ matrix.ARCHITECTURE }}
 
-        🔀 分支: ${{ matrix.REPO_BRANCH }}
+        🔀 Branch: ${{ matrix.REPO_BRANCH }}
 
-        📂 源码: ${{ env.REPO_URL }}
+        📂 Source Code: ${{ env.REPO_URL }}
 
-        🕒 编译时间: $(date +"%Y年%m月%d日%H时%M分")
-
-        👤 用户名: root
-
-        🔒 密码: 无
-
-        🌐 IP： 单网口-动态获取（从上级路由找寻）；多网口-IP：192.168.100.1 " >> release.txt
+        🕒 Compilation Time: $(date +"%Y年%m月%d日%H时%M分") " >> release.txt
         echo "status=success" >> ${GITHUB_OUTPUT}
 
     - name: 自动发布固件到 Releases
