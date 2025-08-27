@@ -7,7 +7,7 @@
 #include "rk3399-opp.dtsi"
 
 / {
-	model = "TVI3315A-V11";
+	model = "TVI3315A";
 	compatible = "rockchip,rk3399-tvi3315a", "rockchip,rk3399";
 
 	aliases {
