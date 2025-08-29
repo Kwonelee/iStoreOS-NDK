@@ -42,15 +42,13 @@ TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/legacy.mk
 
 # 增加tv设备
 echo -e "\\ndefine Device/rk3399_tvi3315a
-  $(Device/Legacy)
   DEVICE_VENDOR := RK3399
   DEVICE_MODEL := tvi3315a
+  DEVICE_VARIANT := 4GB LPDDR4
   SOC := rk3399
-  SUPPORTED_DEVICES := rk3399,tvi3315a
-  DEVICE_DTS := rockchip/rk3399-tvi3315a
   UBOOT_DEVICE_NAME := tvi3315a-rk3399
 endef
-TARGET_DEVICES += rk3399_tvi3315a" >> target/linux/rockchip/image/legacy.mk
+TARGET_DEVICES += rk3399_tvi3315a" >> target/linux/rockchip/image/armv8.mk
 
 # 替换uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
