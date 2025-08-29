@@ -39,7 +39,8 @@ cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/rk3399-tvi3315a-u-boot.dtsi p
 # 复制dts设备树文件到指定目录下
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3568/rk3566-roc-pc.dts target/linux/rockchip/dts/rk3568/
 
-cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
+cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts target/linux/rockchip/dts/
+#cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
 #cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399.dtsi target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
 #cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-opp.dtsi target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
 # 以及package/boot/uboot-rockchip/src/arch/arm/dts/目录
