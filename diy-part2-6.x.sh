@@ -29,11 +29,6 @@
 mkdir -p package/base-files/files/lib/firmware/brcm/
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
-mkdir -p bin/target/rockchip/rk3399-tvi3315a/
-cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/uboot.img bin/target/rockchip/rk3399-tvi3315a/
-cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/trust.bin bin/target/rockchip/rk3399-tvi3315a/
-cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/idbloader.bin bin/target/rockchip/rk3399-tvi3315a/
-
 # 增加m2设备
 echo -e "\\ndefine Device/firefly_station-m2
 \$(call Device/Legacy/rk3566,\$(1))
