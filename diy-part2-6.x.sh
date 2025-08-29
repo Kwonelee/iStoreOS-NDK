@@ -48,7 +48,9 @@ echo -e "\\ndefine Device/rk3399_tvi3315a
   SOC := rk3399
   SUPPORTED_DEVICES := rk3399,tvi3315a
   DEVICE_DTS := rockchip/rk3399-tvi3315a
-  UBOOT_DEVICE_NAME := tvi3315a-rk3399
+  IMAGE/idbloader.bin := cat bin/target/rockchip/rk3399-tvi3315a/idbloader.bin
+  IMAGE/trust.bin := cat bin/target/rockchip/rk3399-tvi3315a/trust.bin
+  IMAGE/uboot.img := cat bin/target/rockchip/rk3399-tvi3315a/uboot.img
 endef
 TARGET_DEVICES += rk3399_tvi3315a" >> target/linux/rockchip/image/legacy.mk
 
