@@ -49,3 +49,8 @@ echo -e "\\ndefine Device/rk3399_tvi3315a
   IMAGE/uboot.img := cat bin/target/rockchip/rk3399-tvi3315a/uboot.img
 endef
 TARGET_DEVICES += rk3399_tvi3315a" >> target/linux/rockchip/image/legacy.mk
+
+mkdir -p bin/target/rockchip/rk3399-tvi3315a/
+cp /您的文件路径/uboot.img bin/target/rockchip/rk3399-tvi3315a/
+cp /您的文件路径/trust.bin bin/target/rockchip/rk3399-tvi3315a/
+cp /您的文件路径/idbloader.bin bin/target/rockchip/rk3399-tvi3315a/
