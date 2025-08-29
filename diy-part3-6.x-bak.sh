@@ -1,11 +1,4 @@
-#!/bin/bash
-#===============================================
-# Description: DIY script
-# File name: diy-script.sh
-# Lisence: MIT
-# Author: P3TERX
-# Blog: https://p3terx.com
-#===============================================
+#备份留底
 
 ### Devices ###
 define Device/Default
