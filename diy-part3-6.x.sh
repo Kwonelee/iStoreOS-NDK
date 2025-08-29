@@ -7,6 +7,24 @@
 # Blog: https://p3terx.com
 #===============================================
 
+### Devices ###
+define Device/Default
+  PROFILES := Default
+  KERNEL = kernel-bin | lzma | fit lzma $$(DTS_DIR)/$$(DEVICE_DTS).dtb
+  BOOT_SCRIPT :=
+  IMAGES := sysupgrade.img.gz
+  IMAGE/sysupgrade.img.gz = boot-common | boot-script $$(BOOT_SCRIPT) | pine64-img | gzip | append-metadata
+  DEVICE_DTS = rockchip/$$(SOC)-$(lastword $(subst _, ,$(1)))
+  UBOOT_DEVICE_NAME = $(lastword $(subst _, ,$(1)))-$$(SOC)
+endef
+
+define Device/Legacy
+  KERNEL = kernel-bin
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_DTS = $$(SOC)/$$(SOC)-$(lastword $(subst _, ,$(1)))
+  IMAGE/sysupgrade.img.gz = boot-common-legacy | boot-script-legacy $$(BOOT_SCRIPT) | pine64-img | gzip | append-metadata
+endef
+
 # 增加tv设备
 echo -e "\\ndefine Device/rk3399_tvi3315a
   $(Device/Legacy)
@@ -31,17 +49,3 @@ echo -e "\\ndefine Device/rk3399_tvi3315a
   IMAGE/uboot.img := cat bin/target/rockchip/rk3399-tvi3315a/uboot.img
 endef
 TARGET_DEVICES += rk3399_tvi3315a" >> target/linux/rockchip/image/legacy.mk
-
-
-
-
-# 增加m2设备
-echo -e "\\ndefine Device/firefly_station-m2
-\$(call Device/Legacy/rk3566,\$(1))
-  DEVICE_VENDOR := Firefly
-  DEVICE_MODEL := Station M2 / RK3566 ROC PC
-  DEVICE_DTS := rk3568/rk3566-roc-pc
-  SUPPORTED_DEVICES += rockchip,rk3566-roc-pc firefly,rk3566-roc-pc firefly,station-m2
-  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
-endef
-TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/legacy.mk
