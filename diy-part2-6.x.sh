@@ -46,7 +46,6 @@ echo -e "\\ndefine Device/tvi_tvi3315a
   DEVICE_MODEL := Tvi3315a
   SOC := rk3399
   DEVICE_DTS = rk3399/rk3399-tvi3315a
-  SUPPORTED_DEVICES += rockchip,rk3399-tvi3315a tvi,rk3399-tvi3315a tvi,tvi3315a
   UBOOT_DEVICE_NAME := tvi3315a-rk3399
 endef
 TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/armv8.mk
