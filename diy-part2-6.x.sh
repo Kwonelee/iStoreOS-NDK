@@ -40,13 +40,8 @@ cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/rk3399-tvi3315a-u-boot.dtsi p
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3568/rk3566-roc-pc.dts target/linux/rockchip/dts/rk3568/
 
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts target/linux/rockchip/dts/
-#cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
-#cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399.dtsi target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
-#cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-opp.dtsi target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
 # 以及package/boot/uboot-rockchip/src/arch/arm/dts/目录
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts package/boot/uboot-rockchip/src/arch/arm/dts/
-#cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/
-#cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-opp.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/
 
 # 添加dtb补丁
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/900-add-rk3399-tvi3315a-dtb-to-makefile.patch target/linux/rockchip/patches-6.6/
