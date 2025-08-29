@@ -44,8 +44,11 @@ TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/legacy.mk
 echo -e "\\ndefine Device/tvi_tvi3315a
   DEVICE_VENDOR := Tvi
   DEVICE_MODEL := Tvi3315a
+  DEVICE_VARIANT := 4GB LPDDR4
   SOC := rk3399
-  UBOOT_DEVICE_NAME := tvi3315a-rk3399
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_DTS = rk3399/rk3399-tvi3315a
+  KERNEL = kernel-bin | lzma | fit lzma $$(KDIR)/image-rk3399-tvi3315a.dtb
 endef
 TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/armv8.mk
 
