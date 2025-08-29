@@ -29,27 +29,6 @@
 mkdir -p package/base-files/files/lib/firmware/brcm/
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
-# 增加m2设备
-echo -e "\\ndefine Device/firefly_station-m2
-\$(call Device/Legacy/rk3566,\$(1))
-  DEVICE_VENDOR := Firefly
-  DEVICE_MODEL := Station M2 / RK3566 ROC PC
-  DEVICE_DTS := rk3568/rk3566-roc-pc
-  SUPPORTED_DEVICES += rockchip,rk3566-roc-pc firefly,rk3566-roc-pc firefly,station-m2
-  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
-endef
-TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/legacy.mk
-
-# 增加tv设备
-echo -e "\\ndefine Device/tvi_tvi3315a
-  DEVICE_VENDOR := Tvi
-  DEVICE_MODEL := Tvi3315a
-  SOC := rk3399
-  DEVICE_DTS = rockchip/rk3399-tvi3315a
-  UBOOT_DEVICE_NAME := tvi3315a-rk3399
-endef
-TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/armv8.mk
-
 # 替换uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
 
@@ -70,6 +49,27 @@ cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-opp.dtsi package/boot/uboo
 
 # 添加dtb补丁
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/900-add-rk3399-tvi3315a-dtb-to-makefile.patch target/linux/rockchip/patches-6.6/
+
+# 增加m2设备
+echo -e "\\ndefine Device/firefly_station-m2
+\$(call Device/Legacy/rk3566,\$(1))
+  DEVICE_VENDOR := Firefly
+  DEVICE_MODEL := Station M2 / RK3566 ROC PC
+  DEVICE_DTS := rk3568/rk3566-roc-pc
+  SUPPORTED_DEVICES += rockchip,rk3566-roc-pc firefly,rk3566-roc-pc firefly,station-m2
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
+endef
+TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/legacy.mk
+
+# 增加tv设备
+echo -e "\\ndefine Device/tvi_tvi3315a
+  DEVICE_VENDOR := Tvi
+  DEVICE_MODEL := Tvi3315a
+  SOC := rk3399
+  DEVICE_DTS = rockchip/rk3399-tvi3315a
+  UBOOT_DEVICE_NAME := tvi3315a-rk3399
+endef
+TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/armv8.mk
 
 # 测试添加luci-app-turboacc
 #curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
