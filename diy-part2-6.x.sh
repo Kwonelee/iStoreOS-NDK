@@ -42,7 +42,7 @@ TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/legacy.mk
 
 # 增加tv设备
 echo -e "\\ndefine Device/rk3399_tvi3315a
-  $(call Device/Legacy,$(1))
+  $(Device/Legacy)
   DEVICE_VENDOR := RK3399
   DEVICE_MODEL := tvi3315a
   SOC := rk3399
