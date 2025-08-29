@@ -43,7 +43,7 @@ TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/legacy.mk
 # 增加tv设备
 echo -e "\\ndefine Device/tvi_tvi3315a
   DEVICE_VENDOR := Tvi
-  DEVICE_MODEL := tvi3315a
+  DEVICE_MODEL := Tvi3315a
   DEVICE_VARIANT := 4GB LPDDR4
   SOC := rk3399
   UBOOT_DEVICE_NAME := tvi3315a-rk3399
