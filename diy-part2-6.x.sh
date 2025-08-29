@@ -54,6 +54,11 @@ echo -e "\\ndefine Device/rk3399_tvi3315a
 endef
 TARGET_DEVICES += rk3399_tvi3315a" >> target/linux/rockchip/image/legacy.mk
 
+mkdir -p bin/target/rockchip/rk3399-tvi3315a/
+cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/uboot.img bin/target/rockchip/rk3399-tvi3315a/
+cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/trust.bin bin/target/rockchip/rk3399-tvi3315a/
+cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/idbloader.bin bin/target/rockchip/rk3399-tvi3315a/
+
 # 替换uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
 
