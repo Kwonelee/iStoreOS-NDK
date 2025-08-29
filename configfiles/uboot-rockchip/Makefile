@@ -123,9 +123,9 @@ endef
 
 define U-Boot/tvi3315a-rk3399
   $(U-Boot/rk3399/Default)
-  NAME:=RK3399 tvi3315a
+  NAME:=Tvi tvi3315a
   BUILD_DEVICES:= \
-    rk3399_tvi3315a
+    tvi_tvi3315a
 endef
 
 define U-Boot/nanopc-t4-rk3399
