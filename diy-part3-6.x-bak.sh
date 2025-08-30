@@ -8,7 +8,7 @@ echo -e "\\ndefine Device/tvi_tvi3315a
   DEVICE_DTS := rk3399/rk3399-tvi3315a   #命名规范时可去掉
   UBOOT_DEVICE_NAME := tvi3315a-rk3399
 endef
-TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/armv8.mk
+TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/legacy.mk
 
 # 替换uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
