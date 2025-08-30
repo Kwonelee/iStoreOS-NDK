@@ -19,7 +19,13 @@ define Device/Legacy
 endef
 
 # 增加tv设备
+echo -e "\\ndefine Device/Legacy/rk3399
+$(call Device/Legacy,$(1))
+  SOC := rk3399
+endef" >> target/linux/rockchip/image/legacy.mk
+
 echo -e "\\ndefine Device/tvi_tvi3315a
+$(call Device/Legacy/rk3399,$(1))
   DEVICE_VENDOR := Tvi
   DEVICE_MODEL := TVI3315A
   SOC := rk3399
