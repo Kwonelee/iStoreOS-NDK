@@ -1,11 +1,11 @@
-###RK3399移植调整文件如下，单网口不需要改网络配置文件
+###RK3399移植调整文件如下（方式二），单网口不需要改网络配置文件
 
 # 增加tv设备
 echo -e "\\ndefine Device/tvi_tvi3315a
   DEVICE_VENDOR := Tvi
   DEVICE_MODEL := TVI3315A
   SOC := rk3399
-  DEVICE_DTS := rk3399/rk3399-tvi3315a
+  DEVICE_DTS := rk3399/rk3399-tvi3315a   #命名规范时可去掉
   UBOOT_DEVICE_NAME := tvi3315a-rk3399
 endef
 TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/armv8.mk
