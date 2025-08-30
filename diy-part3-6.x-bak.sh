@@ -4,6 +4,7 @@
 echo -e "\\ndefine Device/Legacy/rk3399
 $(call Device/Legacy,$(1))
   SOC := rk3399
+  BOOT_SCRIPT := default
 endef" >> target/linux/rockchip/image/legacy.mk
 
 echo -e "\\ndefine Device/tvi_tvi3315a
