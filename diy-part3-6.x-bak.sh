@@ -1,23 +1,5 @@
 ###RK3399移植调整文件如下（方式二），单网口不需要改网络配置文件
 
-### 官方提供继承的两个默认配置参考 ###
-define Device/Default
-  PROFILES := Default
-  KERNEL = kernel-bin | lzma | fit lzma $$(DTS_DIR)/$$(DEVICE_DTS).dtb
-  BOOT_SCRIPT :=
-  IMAGES := sysupgrade.img.gz
-  IMAGE/sysupgrade.img.gz = boot-common | boot-script $$(BOOT_SCRIPT) | pine64-img | gzip | append-metadata
-  DEVICE_DTS = rockchip/$$(SOC)-$(lastword $(subst _, ,$(1)))
-  UBOOT_DEVICE_NAME = $(lastword $(subst _, ,$(1)))-$$(SOC)
-endef
-
-define Device/Legacy
-  KERNEL = kernel-bin
-  DEVICE_DTS_DIR := ../dts
-  DEVICE_DTS = $$(SOC)/$$(SOC)-$(lastword $(subst _, ,$(1)))
-  IMAGE/sysupgrade.img.gz = boot-common-legacy | boot-script-legacy $$(BOOT_SCRIPT) | pine64-img | gzip | append-metadata
-endef
-
 # 增加tv设备
 echo -e "\\ndefine Device/Legacy/rk3399
 $(call Device/Legacy,$(1))
@@ -47,3 +29,24 @@ cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts target/linux/
 
 # 添加dtb补丁
 cp -f $GITHUB_WORKSPACE/configfiles/patch/900-add-rk3399-tvi3315a-dtb-to-makefile.patch target/linux/rockchip/patches-6.6/
+
+
+
+
+### 官方提供继承的两个默认配置参考 ###
+define Device/Default
+  PROFILES := Default
+  KERNEL = kernel-bin | lzma | fit lzma $$(DTS_DIR)/$$(DEVICE_DTS).dtb
+  BOOT_SCRIPT :=
+  IMAGES := sysupgrade.img.gz
+  IMAGE/sysupgrade.img.gz = boot-common | boot-script $$(BOOT_SCRIPT) | pine64-img | gzip | append-metadata
+  DEVICE_DTS = rockchip/$$(SOC)-$(lastword $(subst _, ,$(1)))
+  UBOOT_DEVICE_NAME = $(lastword $(subst _, ,$(1)))-$$(SOC)
+endef
+
+define Device/Legacy
+  KERNEL = kernel-bin
+  DEVICE_DTS_DIR := ../dts
+  DEVICE_DTS = $$(SOC)/$$(SOC)-$(lastword $(subst _, ,$(1)))
+  IMAGE/sysupgrade.img.gz = boot-common-legacy | boot-script-legacy $$(BOOT_SCRIPT) | pine64-img | gzip | append-metadata
+endef
