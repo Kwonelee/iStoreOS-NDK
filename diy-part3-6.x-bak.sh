@@ -13,7 +13,7 @@ $(call Device/Legacy/rk3399,$(1))
   DEVICE_MODEL := TVI3315A
   SOC := rk3399
   DEVICE_DTS := rk3399/rk3399-tvi3315a   #命名规范时可去掉
-  UBOOT_DEVICE_NAME := tvi3315a-rk3399
+  UBOOT_DEVICE_NAME := tvi3315a-rk3399   #命名规范时可去掉
 endef
 TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/legacy.mk
 
