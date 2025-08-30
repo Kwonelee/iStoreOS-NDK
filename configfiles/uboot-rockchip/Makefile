@@ -123,7 +123,7 @@ endef
 
 define U-Boot/tvi3315a-rk3399
   $(U-Boot/rk3399/Default)
-  NAME:=Tvi3315a
+  NAME:=TVI3315A
   BUILD_DEVICES:= \
     tvi_tvi3315a
 endef
