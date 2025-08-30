@@ -1,4 +1,4 @@
-###调调整文件说明
+###rk3399移植调整文件说明
 
 # 增加tv设备
 echo -e "\\ndefine Device/tvi_tvi3315a
