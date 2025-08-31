@@ -20,11 +20,6 @@
 #echo "CONFIG_PSI=y
 #CONFIG_KPROBES=y" >> target/linux/rockchip/armv8/config-6.6
 
-# 集成CPU性能跑分脚本
-#cp -a $GITHUB_WORKSPACE/configfiles/coremark/* package/base-files/files/bin/
-#chmod 755 package/base-files/files/bin/coremark
-#chmod 755 package/base-files/files/bin/coremark.sh
-
 # 集成无线
 #mkdir -p package/base-files/files/lib/firmware/brcm/
 #cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
