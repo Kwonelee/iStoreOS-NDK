@@ -41,7 +41,7 @@ TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/armv8.mk
 # 替换uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
 
-# 复制配置文件到uboot-rockchip
+# 复制配置文件到uboot-rockchip  ###目前是怀疑rk3399-tvi3315a-u-boot.dtsi/tvi3315a-rk3399_defconfig存在问题，但未找出原因！！！
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/{rk3399.dtsi,rk3399-opp.dtsi,rk3399-tvi3315a.dts} package/boot/uboot-rockchip/src/arch/arm/dts/
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/rk3399-tvi3315a-u-boot.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/tvi3315a-rk3399_defconfig package/boot/uboot-rockchip/src/configs/
