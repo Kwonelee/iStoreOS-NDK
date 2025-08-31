@@ -83,7 +83,7 @@ CONFIG_ERRNO_STR=y
 
 
 
-####尝试2####来源：https://github.com/cm9vdA/build-linux/blob/master/u-boot/rockchip/u-boot-2023.01/tvi3315a-rk3399_defconfig
+####备份2####来源：https://github.com/cm9vdA/build-linux/blob/master/u-boot/rockchip/u-boot-2023.01/tvi3315a-rk3399_defconfig
 
 CONFIG_ARM=y
 CONFIG_ARCH_ROCKCHIP=y
