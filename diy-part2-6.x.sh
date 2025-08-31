@@ -29,18 +29,7 @@
 mkdir -p package/base-files/files/lib/firmware/brcm/
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
-# 增加m2设备
-echo -e "\\ndefine Device/firefly_station-m2
-\$(call Device/Legacy/rk3566,\$(1))
-  DEVICE_VENDOR := Firefly
-  DEVICE_MODEL := Station M2 / RK3566 ROC PC
-  DEVICE_DTS := rk3568/rk3566-roc-pc
-  SUPPORTED_DEVICES += firefly,rk3566-roc-pc firefly,station-m2
-  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
-endef
-TARGET_DEVICES += firefly_station-m2" >> target/linux/rockchip/image/legacy.mk
-
-# 增加tv设备
+# 增加rk3399设备
 echo -e "\\ndefine Device/tvi_tvi3315a
   DEVICE_VENDOR := Tvi
   DEVICE_MODEL := TVI3315A
@@ -59,13 +48,9 @@ cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/tvi3315a-rk3399_defconfig pac
 
 # 复制dts设备树文件到指定目录下
 cp -a $GITHUB_WORKSPACE/configfiles/dts/rk3399/* target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
-cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3568/rk3566-roc-pc.dts target/linux/rockchip/dts/rk3568/
 
 # 添加dtb补丁
 cp -f $GITHUB_WORKSPACE/configfiles/patch/900-add-rk3399-tvi3315a-dtb-to-makefile.patch target/linux/rockchip/patches-6.6/
-
-# 测试添加luci-app-turboacc
-#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
 
 # 定时限速插件
 #git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
