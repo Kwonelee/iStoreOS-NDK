@@ -1,7 +1,7 @@
 # iStoreOS-NDK
 
 # 🤔Introduce
-> **其他机型移植应该大同小异**
+> **3399移植算比较麻烦，其他的机型移植应该相对简单一点**
 
 # 🙏Thanks
 - [istoreos](https://github.com/istoreos/istoreos)
