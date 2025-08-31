@@ -67,6 +67,7 @@ cp -f $GITHUB_WORKSPACE/configfiles/patch/900-add-rk3399-tvi3315a-dtb-to-makefil
 
 
 ### 官方提供继承的两个默认配置参考 ###
+
 define Device/Default
   PROFILES := Default
   KERNEL = kernel-bin | lzma | fit lzma $$(DTS_DIR)/$$(DEVICE_DTS).dtb
