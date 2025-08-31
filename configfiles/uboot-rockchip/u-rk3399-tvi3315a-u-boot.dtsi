@@ -1,4 +1,4 @@
-###尝试1###
+###备份1###
 
 // SPDX-License-Identifier: GPL-2.0+
 #include "rk3399-u-boot.dtsi"
@@ -17,7 +17,7 @@
 
 
 
-###尝试2###
+###备份2###
 
 // SPDX-License-Identifier: GPL-2.0
 
@@ -36,7 +36,7 @@
 
 
 
-###尝试3###
+###备份3###
 
 // SPDX-License-Identifier: GPL-2.0
 
