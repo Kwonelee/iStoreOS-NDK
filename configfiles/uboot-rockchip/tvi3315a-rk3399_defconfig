@@ -1,133 +1,104 @@
-# ==============================================================================
-# 1. 基础架构配置（CPU/架构/板级基础）
-# ==============================================================================
-CONFIG_ARM=y                          # 启用ARM架构支持
-CONFIG_ARCH_ROCKCHIP=y                # 启用Rockchip芯片族支持
-CONFIG_ROCKCHIP_RK3399=y              # 指定芯片型号为RK3399
-CONFIG_TARGET_EVB_RK3399=y            # 目标板级支持（TVI3315A基于EVB-RK3399衍生）
-CONFIG_NR_DRAM_BANKS=1                # DRAM内存 bank数量（TVI3315A为单bank）
-CONFIG_COUNTER_FREQUENCY=24000000     # 计数器频率（与RK3399硬件匹配）
-CONFIG_ROCKCHIP_IODOMAIN=y            # 保留2024.10新增：启用Rockchip IO域管理（硬件电压域适配）
+CONFIG_ARM=y
+CONFIG_ARCH_ROCKCHIP=y
+CONFIG_TEXT_BASE=0x00200000
+CONFIG_NR_DRAM_BANKS=1
+CONFIG_ENV_OFFSET=0x3F8000
+CONFIG_DEFAULT_DEVICE_TREE="rk3399-tvi3315a"
+CONFIG_ROCKCHIP_RK3399=y
+CONFIG_TARGET_EVB_RK3399=y
+CONFIG_DEBUG_UART_BASE=0xFF1A0000
+CONFIG_DEBUG_UART_CLOCK=24000000
+CONFIG_DEBUG_UART=y
+CONFIG_SYS_LOAD_ADDR=0x800800
+CONFIG_HAS_CUSTOM_SYS_INIT_SP_ADDR=y
+CONFIG_CUSTOM_SYS_INIT_SP_ADDR=0x300000
+CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-tvi3315a.dtb"
+CONFIG_DISPLAY_BOARDINFO_LATE=y
+CONFIG_MISC_INIT_R=y
 
-# 关键修正：删除"跳过低级初始化"（原文件2新增，导致硬件未就绪）
-# CONFIG_SKIP_LOWLEVEL_INIT=y         # 【已删除】此配置会跳过DRAM/CPU初始化，直接致命
+# 修正的 SPL/TPL 配置
+CONFIG_SPL_MAX_SIZE=0x2e000
+CONFIG_SPL_PAD_TO=0x7f8000
+CONFIG_SPL_HAS_BSS_LINKER_SECTION=y
+CONFIG_SPL_BSS_START_ADDR=0x400000
+CONFIG_SPL_BSS_MAX_SIZE=0x2000
+# CONFIG_SPL_RAW_IMAGE_SUPPORT is not set
+# CONFIG_SPL_SHARES_INIT_SP_ADDR is not set
+CONFIG_SPL_STACK=0x400000
+CONFIG_SPL_STACK_R=y
+CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000
+CONFIG_SPL_ATF_NO_PLATFORM_PARAM=y
 
-# ==============================================================================
-# 2. SPL/TPL配置（第二阶段引导核心，修复启动链路）
-# ==============================================================================
-CONFIG_TPL=y                          # 启用TPL（更早期引导阶段，RK3399必需）
-CONFIG_SPL_GPIO=y                     # SPL阶段GPIO支持（初始化关键外设引脚）
-CONFIG_SPL_MAX_SIZE=0x40000           # SPL最大尺寸（保留文件2设置，2024.10兼容）
-CONFIG_SPL_PAD_TO=0x7f8000            # SPL填充地址（与文件1一致，适配存储布局）
-# CONFIG_SPL_RAW_IMAGE_SUPPORT is not set # 禁用SPL原始镜像支持（与文件1一致）
-
-# 关键恢复：SPL内存基础配置（原文件2删除，导致SPL崩溃）
-CONFIG_SPL_HAS_BSS_LINKER_SECTION=y   # 启用SPL的BSS段（未初始化变量存储）
-CONFIG_SPL_BSS_START_ADDR=0x400000    # SPL BSS段起始地址（与文件1一致，避开关键内存）
-CONFIG_SPL_BSS_MAX_SIZE=0x2000        # SPL BSS段最大尺寸（8KB，文件1兼容值）
-CONFIG_SPL_STACK=0x400000             # SPL栈地址（与BSS段分离，避免冲突）
-CONFIG_SPL_STACK_R=y                  # 启用SPL动态栈（堆）支持（加载DTB需动态内存）
-CONFIG_SPL_STACK_R_MALLOC_SIMPLE_LEN=0x10000 # SPL堆大小（64KB，文件1兼容值）
-CONFIG_SPL_TINY_MEMSET=y              # 启用SPL内存清零工具（初始化内存必备）
-
-# 关键修正：删除"禁止ATF参数传递"（原文件2新增，导致ATF初始化失败）
-# CONFIG_SPL_ATF_NO_PLATFORM_PARAM=y  # 【已删除】此配置会阻止SPL向ATF传DRAM/DTB参数
-
-# ==============================================================================
-# 3. 命令行配置（启动阶段必需命令，修复硬件初始化依赖）
-# ==============================================================================
-CONFIG_CMD_BOOTZ=y                    # 支持bootz命令（加载Linux内核）
-CONFIG_CMD_GPT=y                      # 支持GPT分区表（TVI3315A存储分区格式）
-CONFIG_CMD_GPIO=y                     # 【恢复】GPIO命令（板级引脚初始化依赖）
-CONFIG_CMD_I2C=y                      # 【恢复】I2C命令（PMIC/传感器通信依赖）
-CONFIG_CMD_MMC=y                      # 支持MMC命令（从SD/EMMC加载固件）
-CONFIG_CMD_USB=y                      # 支持USB命令（USB外设初始化）
-# CONFIG_CMD_SETEXPR is not set       # 禁用表达式命令（非启动必需）
-CONFIG_CMD_TIME=y                     # 支持时间命令（启动计时调试）
-CONFIG_CMD_PMIC=y                     # 【恢复】PMIC命令（RK8XX电源管理配置依赖）
-CONFIG_CMD_REGULATOR=y                # 【恢复】稳压器命令（CPU/DRAM电压调节依赖）
-
-# ==============================================================================
-# 4. 设备树（DTB）配置（修复SPL阶段外设引脚识别）
-# ==============================================================================
-CONFIG_DEFAULT_DEVICE_TREE="rk3399-tvi3315a" # 默认设备树（与文件1一致）
-CONFIG_DEFAULT_FDT_FILE="rockchip/rk3399-tvi3315a.dtb" # 默认DTB文件路径
-CONFIG_SPL_OF_CONTROL=y               # SPL阶段设备树控制（必需）
-# CONFIG_OF_UPSTREAM is not set       # 禁用上游设备树兼容（TVI3315A用定制DTB）
-
-# 关键修正：恢复SPL阶段引脚配置（原文件2删除，导致MMC引脚无法识别）
+CONFIG_TPL=y
+CONFIG_SYS_PROMPT="TVI3315A => "
+CONFIG_CMD_BOOTZ=y
+CONFIG_CMD_GPT=y
+CONFIG_CMD_GPIO=y
+CONFIG_CMD_I2C=y
+CONFIG_CMD_MMC=y
+CONFIG_CMD_USB=y
+# CONFIG_CMD_SETEXPR is not set
+CONFIG_CMD_TIME=y
+CONFIG_CMD_PMIC=y
+CONFIG_CMD_REGULATOR=y
+CONFIG_SPL_OF_CONTROL=y
 CONFIG_OF_SPL_REMOVE_PROPS="pinctrl-0 pinctrl-names clock-names interrupt-parent assigned-clocks assigned-clock-rates assigned-clock-parents"
-# 说明：保留"pinctrl-0/pinctrl-names"，确保SPL能识别MMC/UART的引脚复用关系
+CONFIG_ENV_IS_IN_MMC=y
+CONFIG_SYS_RELOC_GD_ENV_ADDR=y
+CONFIG_ROCKCHIP_GPIO=y
+CONFIG_SYS_I2C_ROCKCHIP=y
+CONFIG_MISC=y
+CONFIG_MMC_DW=y
+CONFIG_MMC_DW_ROCKCHIP=y
+CONFIG_MMC_SDHCI=y
+CONFIG_MMC_SDHCI_ROCKCHIP=y
+CONFIG_SF_DEFAULT_SPEED=20000000
+CONFIG_DM_ETH=y
+CONFIG_ETH_DESIGNWARE=y
+CONFIG_GMAC_ROCKCHIP=y
+CONFIG_PMIC_RK8XX=y
+CONFIG_REGULATOR_PWM=y
+CONFIG_REGULATOR_RK8XX=y
+CONFIG_PWM_ROCKCHIP=y
+CONFIG_DM_RESET=y
+CONFIG_DM_RNG=y
+CONFIG_RNG_ROCKCHIP=y
 
-# ==============================================================================
-# 5. 硬件驱动配置（存储/网络/电源/USB，修复功能依赖）
-# ==============================================================================
-# 存储驱动（MMC核心，修复SD/EMMC加载）
-CONFIG_MMC_DW=y                       # 启用Synopsys DW MMC控制器
-CONFIG_MMC_DW_ROCKCHIP=y              # Rockchip定制DW MMC驱动
-CONFIG_MMC_SDHCI=y                    # 启用SDHCI控制器
-# CONFIG_MMC_SDHCI_SDMA=y             # 【删除】禁用SDMA模式（TVI3315A硬件不支持，原文件2新增）
-CONFIG_MMC_SDHCI_ROCKCHIP=y           # Rockchip定制SDHCI驱动
+CONFIG_BAUDRATE=1500000
+CONFIG_DEBUG_UART_SHIFT=2
+CONFIG_SYSRESET=y
+CONFIG_USB=y
+CONFIG_USB_XHCI_HCD=y
+CONFIG_USB_XHCI_DWC3=y
+CONFIG_USB_EHCI_HCD=y
+CONFIG_USB_EHCI_GENERIC=y
+CONFIG_USB_KEYBOARD=y
+CONFIG_USB_DWC3=y
+CONFIG_USB_DWC3_GENERIC=y
+CONFIG_USB_HOST_ETHER=y
+CONFIG_USB_ETHER_ASIX=y
+CONFIG_USB_ETHER_ASIX88179=y
+CONFIG_USB_ETHER_RTL8152=y
+CONFIG_DM_VIDEO=y
+CONFIG_DISPLAY=y
+CONFIG_VIDEO_ROCKCHIP=y
+CONFIG_DISPLAY_ROCKCHIP_HDMI=y
+CONFIG_SPL_TINY_MEMSET=y
+CONFIG_ERRNO_STR=y
 
-# 网络驱动（保留2024.10新增，适配板载PHY）
-CONFIG_DM_ETH=y                       # 设备模型以太网支持
-CONFIG_ETH_DESIGNWARE=y               # 启用Designware以太网控制器
-CONFIG_GMAC_ROCKCHIP=y                # Rockchip GMAC驱动
-CONFIG_PHY_REALTEK=y                  # 支持Realtek以太网PHY（TVI3315A板载PHY）
-CONFIG_DM_ETH_PHY=y                   # 设备模型PHY支持
-
-# 电源管理（PMIC/稳压器，修复供电）
-CONFIG_PMIC_RK8XX=y                   # 启用RK8XX系列PMIC（TVI3315A用RK808/RK817）
-CONFIG_REGULATOR_RK8XX=y              # RK8XX稳压器驱动
-CONFIG_SPL_DM_REGULATOR_FIXED=y       # SPL阶段固定稳压器支持（早期供电）
-
-# USB驱动（保留2024.10兼容配置）
-CONFIG_USB=y                          # 启用USB支持
-CONFIG_USB_XHCI_HCD=y                 # XHCI USB主机控制器
-CONFIG_USB_EHCI_HCD=y                 # EHCI USB主机控制器
-CONFIG_USB_EHCI_GENERIC=y             # 通用EHCI驱动
-CONFIG_USB_DWC3=y                     # 启用DWC3 USB控制器
-CONFIG_USB_DWC3_GENERIC=y             # 通用DWC3驱动
-CONFIG_USB_KEYBOARD=y                 # USB键盘支持（调试用）
-CONFIG_PHY_ROCKCHIP_INNO_USB2=y       # Rockchip USB2 PHY支持
-CONFIG_PHY_ROCKCHIP_TYPEC=y           # Type-C PHY支持（若板载Type-C可保留）
-
-# 其他硬件（GPIO/I2C/PWM，基础功能）
-CONFIG_ROCKCHIP_GPIO=y                # Rockchip GPIO驱动
-CONFIG_SYS_I2C_ROCKCHIP=y             # Rockchip I2C驱动
-CONFIG_PWM_ROCKCHIP=y                 # Rockchip PWM驱动（背光/风扇控制）
-CONFIG_DM_RESET=y                     # 设备模型复位支持（外设复位）
-CONFIG_MISC=y                         # 【恢复】MISC模块（板级特定初始化）
-CONFIG_MISC_INIT_R=y                  # 【恢复】MISC阶段初始化（硬件定制逻辑）
-
-# ==============================================================================
-# 6. 调试与启动配置（日志/内存/复位，便于问题排查）
-# ==============================================================================
-# 串口调试（关键：确保启动日志可输出）
-CONFIG_DEBUG_UART=y                   # 启用调试UART
-CONFIG_DEBUG_UART_BASE=0xFF1A0000     # 调试UART基地址（RK3399 UART2）
-CONFIG_DEBUG_UART_CLOCK=24000000      # 调试UART时钟（24MHz）
-CONFIG_DEBUG_UART_SHIFT=2             # UART移位配置（与硬件匹配）
-CONFIG_BAUDRATE=1500000               # 串口波特率（1.5Mbps，与文件1一致）
-CONFIG_SYS_NS16550_MEM32=y            # 32位NS16550 UART支持（RK3399必需）
-
-# 内存配置（修复主U-Boot栈指针，避免崩溃）
-CONFIG_SYS_LOAD_ADDR=0x800800         # 内核加载地址（与文件1一致）
-CONFIG_HAS_CUSTOM_SYS_INIT_SP_ADDR=y  # 【恢复】启用自定义栈指针（SP）地址
-CONFIG_CUSTOM_SYS_INIT_SP_ADDR=0x300000 # 【恢复】主U-Boot初始SP地址（3MB，安全DRAM区域）
-CONFIG_SYS_RELOC_GD_ENV_ADDR=y        # 环境变量重定位（适配DRAM布局）
-
-# 环境变量（存储位置）
-CONFIG_ENV_IS_IN_MMC=y                # 环境变量存储在MMC（与文件1一致）
-CONFIG_ENV_OFFSET=0x3F8000            # 环境变量偏移地址（与文件1一致）
-
-# 启动辅助（显示/复位/错误处理）
-CONFIG_DISPLAY_BOARDINFO_LATE=y       # 后期显示板级信息（调试用）
-CONFIG_DISPLAY=y                      # 启用显示功能
-CONFIG_VIDEO=y                        # 视频支持
-CONFIG_VIDEO_ROCKCHIP=y               # Rockchip视频驱动
-CONFIG_DISPLAY_ROCKCHIP_HDMI=y        # HDMI显示支持（若板载HDMI可保留）
-CONFIG_SYSINFO=y                      # 系统信息支持
-CONFIG_SYSINFO_SMBIOS=y               # SMBIOS系统信息（兼容x86工具链）
-CONFIG_SYSRESET=y                     # 系统复位支持（异常时重启）
-CONFIG_ERRNO_STR=y                    # 错误码字符串支持（便于日志排查）
+# 新增的关键配置
+CONFIG_SPL_LOAD_FIT=y
+CONFIG_SPL_FIT_IMAGE_TINY=y
+CONFIG_SPL_SEPARATE_BSS=y
+CONFIG_SPL_SERIAL_SUPPORT=y
+CONFIG_SPL_DRIVERS_MISC_SUPPORT=y
+CONFIG_SPL_CLK=y
+CONFIG_SPL_POWER=y
+CONFIG_SPL_RAM=y
+CONFIG_SPL_DM_SEQ_ALIAS=y
+CONFIG_ROCKCHIP_CRC=y
+CONFIG_SPL_ROCKCHIP_CRC=y
+CONFIG_SPL_BOARD_INIT=y
+CONFIG_BOOTSTAGE=y
+CONFIG_BOOTSTAGE_STASH_ADDR=0x300000
+CONFIG_BOOTSTAGE_STASH_SIZE=0x1000
