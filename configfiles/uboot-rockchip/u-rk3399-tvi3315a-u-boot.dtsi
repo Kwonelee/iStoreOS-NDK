@@ -1,8 +1,9 @@
 ###备份1###
 
-// SPDX-License-Identifier: GPL-2.0+
+// SPDX-License-Identifier: GPL-2.0
+
 #include "rk3399-u-boot.dtsi"
-#include "rk3399-sdram-ddr3-1600.dtsi"
+#include "rk3399-sdram-lpddr3-4GB-1600.dtsi"
 
 / {
 	chosen {
@@ -13,6 +14,7 @@
 &vdd_log {
 	regulator-init-microvolt = <950000>;
 };
+
 
 
 
@@ -36,12 +38,13 @@
 
 
 
-###备份3###
 
-// SPDX-License-Identifier: GPL-2.0
 
+###备份2###
+
+// SPDX-License-Identifier: GPL-2.0+
 #include "rk3399-u-boot.dtsi"
-#include "rk3399-sdram-lpddr3-4GB-1600.dtsi"
+#include "rk3399-sdram-ddr3-1600.dtsi"
 
 / {
 	chosen {
