@@ -29,25 +29,33 @@
 mkdir -p package/base-files/files/lib/firmware/brcm/
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
-# 增加rk3399设备
+# 增加tv设备
+echo -e "\\ndefine Device/Legacy/rk3399
+\$(call Device/Legacy,\$(1))
+  SOC := rk3399
+  BOOT_SCRIPT := default
+endef" >> target/linux/rockchip/image/legacy.mk
+
 echo -e "\\ndefine Device/tvi_tvi3315a
+\$(call Device/Legacy/rk3399,\$(1))
   DEVICE_VENDOR := Tvi
   DEVICE_MODEL := TVI3315A
   SOC := rk3399
+  DEVICE_DTS := rk3399/rk3399-tvi3315a
   UBOOT_DEVICE_NAME := tvi3315a-rk3399
 endef
-TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/armv8.mk
+TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/legacy.mk
 
 # 替换uboot-rockchip/Makefile
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/Makefile package/boot/uboot-rockchip/Makefile
 
 # 复制配置文件到uboot-rockchip
-cp -a $GITHUB_WORKSPACE/configfiles/dts/rk3399/* package/boot/uboot-rockchip/src/arch/arm/dts/
+cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts package/boot/uboot-rockchip/src/arch/arm/dts/
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/rk3399-tvi3315a-u-boot.dtsi package/boot/uboot-rockchip/src/arch/arm/dts/
 cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/tvi3315a-rk3399_defconfig package/boot/uboot-rockchip/src/configs/
 
 # 复制dts设备树文件到指定目录下
-cp -a $GITHUB_WORKSPACE/configfiles/dts/rk3399/* target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
+cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/rk3399-tvi3315a.dts target/linux/rockchip/dts/rk3399/
 
 # 添加dtb补丁
 cp -f $GITHUB_WORKSPACE/configfiles/patch/900-add-rk3399-tvi3315a-dtb-to-makefile.patch target/linux/rockchip/patches-6.6/
