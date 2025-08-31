@@ -41,8 +41,8 @@ echo -e "\\ndefine Device/tvi_tvi3315a
   DEVICE_VENDOR := Tvi
   DEVICE_MODEL := TVI3315A
   SOC := rk3399
-  DEVICE_DTS := rk3399/rk3399-tvi3315a   #命名规范时可去掉
-  UBOOT_DEVICE_NAME := tvi3315a-rk3399   #命名规范时可去掉
+  DEVICE_DTS := rk3399/rk3399-tvi3315a
+  UBOOT_DEVICE_NAME := tvi3315a-rk3399
 endef
 TARGET_DEVICES += tvi_tvi3315a" >> target/linux/rockchip/image/legacy.mk
 
