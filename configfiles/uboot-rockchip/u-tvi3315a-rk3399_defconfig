@@ -1,4 +1,4 @@
-####尝试1####
+####尝试1####来源：其他3399在u-boot-2024.10下的配置
 
 CONFIG_ARM=y
 CONFIG_SKIP_LOWLEVEL_INIT=y
