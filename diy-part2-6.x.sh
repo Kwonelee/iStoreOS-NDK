@@ -26,8 +26,8 @@
 #chmod 755 package/base-files/files/bin/coremark.sh
 
 # 集成无线
-mkdir -p package/base-files/files/lib/firmware/brcm/
-cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
+#mkdir -p package/base-files/files/lib/firmware/brcm/
+#cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
 # 增加tv设备
 echo -e "\\ndefine Device/tvi_tvi3315a
