@@ -82,8 +82,7 @@ CONFIG_ERRNO_STR=y
 
 
 
-
-####备份文件####
+####尝试2####
 
 CONFIG_ARM=y
 CONFIG_ARCH_ROCKCHIP=y
@@ -177,7 +176,7 @@ CONFIG_ERRNO_STR=y
 
 
 
-####备份文件####
+####尝试3####
 
 CONFIG_ARM=y
 CONFIG_ARCH_ROCKCHIP=y
