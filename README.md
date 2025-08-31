@@ -1,7 +1,7 @@
 # iStoreOS-NDK
 
 # 🤔Introduce
-> **尝试移植RK3399至istoreos，能出固件但刷机无法启动。谁会的可继续帮研究研究！！！**
+> **尝试移植RK3399至iStoreOS，能出固件但刷机无法启动。谁会的可继续帮研究研究！！！**
 
 # 🙏Thanks
 - [istoreos](https://github.com/istoreos/istoreos)
