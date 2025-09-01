@@ -113,4 +113,4 @@ jobs:
       with:
         retain_days: 1
         keep_minimum_runs: 1
-        token: ${{ secrets.ACCESS_TOKEN }}
+        token: ${{ secrets.GH_TOKEN }}
