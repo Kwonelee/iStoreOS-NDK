@@ -1,13 +1,16 @@
 # iStoreOS-NDK
 
 # 🤔Introduce
-> **项目以移植rk3399至iStoreOS官方进行原生编译为目的**
+> **本项目以移植rk3399至iStoreOS官方，进行原生编译为目的**
 
-> **rk3399移植算比较麻烦，其他机型移植应该相对简单一点**
+> **rk3399移植会稍许麻烦点，其他机型移植应该会简单一些**
 
-> **如果你的机型你模仿不出来，你可以直接用这个项目https://github.com/Kwonelee/iStoreOS-Actions**
+> **如果你的机型你模仿不出来，你可以直接用这个项目👉😂https://github.com/Kwonelee/iStoreOS-Actions**
 
 > **使用此仓库必须设置机密token，Actions云编译固件时需要用到，通常在仓库设置里面。机密键名为 `GH_TOKEN`（严禁在仓库可视代码中填写，否则后果自负）**
+
+# 🤗Screenshot
+<img width="2559" height="1306" alt="image" src="https://github.com/user-attachments/assets/05f48f13-9034-4ca4-b08c-dd4f8e1ae955" />
 
 # 🌟Star戳一戳咯😀
 > **"据说点过Star的同学，都非常的帅气哟！✨"**  
