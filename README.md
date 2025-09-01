@@ -10,7 +10,7 @@
 > **使用此仓库必须设置机密token，Actions云编译固件时需要用到，通常在仓库设置里面。机密键名为 `GH_TOKEN`（严禁在仓库可视代码中填写，否则后果自负）**
 
 # 🤗Screenshot
-<img width="2559" height="1306" alt="image" src="https://github.com/user-attachments/assets/05f48f13-9034-4ca4-b08c-dd4f8e1ae955" />
+<img width="1250" height="677" alt="index" src="https://github.com/user-attachments/assets/ec36195f-eadd-4e8b-a707-7ae85b6642aa" />
 
 # 🌟Star戳一戳咯😀
 > **"据说点过Star的同学，都非常的帅气哟！✨"**  
