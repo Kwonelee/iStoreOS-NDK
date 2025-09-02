@@ -58,7 +58,7 @@ cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/tvi3315a-rk3399_defconfig pac
 # 复制dts到target/linux/rockchip/dts/rk3399
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/{rk3399.dtsi,rk3399-opp.dtsi,rk3399-tvi3315a.dts} target/linux/rockchip/dts/rk3399/
 
-# 添加dtb补丁
+# 添加dtb补丁到target/linux/rockchip/patches-6.6
 cp -f $GITHUB_WORKSPACE/configfiles/patch/800-add-rk3399-tvi3315a-dtb-to-makefile.patch target/linux/rockchip/patches-6.6/
 
 
