@@ -23,7 +23,7 @@ jobs:
         if [ -f "$FILE_PATH" ] && [ -s "$FILE_PATH" ]; then
            content=$(cat ${GITHUB_WORKSPACE}/configfiles/config_data-6.x.txt)
            configdata=$(echo "$content" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
-           # ----禁用非必要软件包，由AI生成
+           # ------------禁用非必要软件包，由AI生成------------
            sed -i 's/^CONFIG_PACKAGE_adb=y/# CONFIG_PACKAGE_adb is not set/' ./armv8/.config
            sed -i 's/^CONFIG_PACKAGE_adb-enablemodem=y/# CONFIG_PACKAGE_adb-enablemodem is not set/' ./armv8/.config
            sed -i 's/^CONFIG_PACKAGE_appfilter=y/# CONFIG_PACKAGE_appfilter is not set/' ./armv8/.config
@@ -87,7 +87,7 @@ jobs:
            sed -i 's/^CONFIG_PACKAGE_luci-i18n-mergerfs-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-mergerfs-zh-cn is not set/' ./armv8/.config
            sed -i 's/^CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-oaf-zh-cn is not set/' ./armv8/.config
            sed -i 's/^CONFIG_PACKAGE_luci-i18n-ota-zh-cn=y/# CONFIG_PACKAGE_luci-i18n-ota-zh-cn is not set/' ./armv8/.config
-           # ----结束
+           # ----------------结束----------------
            echo -e "\\n$configdata" >> ./armv8/.config
            # 清除.config配置文件里面重复的配置项
            configdata2=$(cat ./armv8/.config)
