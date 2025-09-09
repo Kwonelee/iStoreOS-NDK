@@ -1,9 +1,9 @@
 # iStoreOS-NDK
 
 # 🤔Introduce
-> **本项目以移植rk3399至iStoreOS官方，进行原生编译为目的**
+> **本项目以移植rk3399至iStoreOS官方，进行原生编译生成sysupgrade固件为目的**
 
-> **rk3399移植会稍许麻烦点，其他机型移植应该会简单一些**
+> **rk3399移植会稍许麻烦一点，其他机型移植应该简单一些**
 
 > **如果你的机型你模仿不出来，你可以直接用这个项目👉😂https://github.com/Kwonelee/iStoreOS-Actions**
 
