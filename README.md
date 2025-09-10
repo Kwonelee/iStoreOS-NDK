@@ -5,7 +5,7 @@
 
 > **🔈 RK3399 算是移植中的一块“硬骨头”，只要把它啃下来，其他机型的移植工作基本上就能水到渠成了**
 
-> **😂如果您在适配其他机型时遇到困难，也欢迎您直接使用这个项目😂👉https://github.com/Kwonelee/iStoreOS-Actions**
+> **😂如果您在适配其他机型时遇到困难，也欢迎您直接使用这个项目😂👉[iStoreOS-Actions](https://github.com/Kwonelee/iStoreOS-Actions)**
 
 > **使用此仓库必须设置机密token，Actions云编译固件时需要用到，通常在仓库设置里面。机密键名为 `GH_TOKEN`（严禁在仓库可视代码中填写，否则后果自负）**
 
