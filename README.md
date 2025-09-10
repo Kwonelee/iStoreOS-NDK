@@ -13,9 +13,9 @@
 <img width="1250" height="677" alt="index" src="https://github.com/user-attachments/assets/ec36195f-eadd-4e8b-a707-7ae85b6642aa" />
 
 # 🌟Star戳一戳，好运加满！😆
-> **"点过 Star 的朋友，颜值与智慧双双在线！✨"**
+> **"点过 `Star` 的朋友，颜值与智慧双双在线！✨"**
 
-> **"您的每一个 ⭐️，都是开源土壤里的一缕阳光，让灵感发芽，让创造生长~"**
+> **"您的每一个⭐️，都是开源土壤里的一缕阳光，让灵感发芽，让创造生长~"**
 
 # 🙏Thanks
 - [istoreos](https://github.com/istoreos/istoreos)
