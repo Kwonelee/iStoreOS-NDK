@@ -1,2 +1,1 @@
-CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_firefly_station-m2=y
 CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_tvi_tvi3315a=y
