@@ -1,9 +1,9 @@
 # iStoreOS-NDK
 
 # 🤔Introduce
-> **🔈本项目旨在将 RK3399 平台适配至 iStoreOS 官方源码，并通过原生编译构建 `sysupgrade` 格式固件**
+> **🔈 本项目旨在将 RK3399 平台适配至 iStoreOS 官方源码，并通过原生编译构建 `sysupgrade` 格式固件**
 
-> **🔈rk3399移植会稍许麻烦一点，其他机型移植应该简单一些**
+> **🔈 RK3399 算是移植中的一块“硬骨头”，只要把它啃下来，其他机型的移植工作基本上就能水到渠成了**
 
 > **😂如果你的机型你模仿不出来，你可以直接用这个项目😂👉https://github.com/Kwonelee/iStoreOS-Actions**
 
