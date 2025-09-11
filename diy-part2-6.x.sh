@@ -12,7 +12,7 @@
 #CONFIG_KPROBES=y" >> target/linux/rockchip/armv8/config-6.6
 
 # 集成无线
-mkdir -p package/base-files/files/lib/firmware/brcm/
+mkdir -p package/base-files/files/lib/firmware/brcm
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
 # 增加tv设备
