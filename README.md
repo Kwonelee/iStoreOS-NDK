@@ -10,7 +10,9 @@
 > **使用此仓库必须设置机密token，Actions云编译固件时需要用到，通常在仓库设置里面。机密键名为 `GH_TOKEN`（严禁在仓库可视代码中填写，否则后果自负）**
 
 # 🤗Screenshot
-<img width="1250" height="677" alt="index" src="https://github.com/user-attachments/assets/ec36195f-eadd-4e8b-a707-7ae85b6642aa" />
+<p align="center">
+    <img src="https://github.com/Kwonelee/iStoreOS-NDK/raw/main/configfiles/screenshot/screenshot2.png">
+</p>
 
 # 🌟Star戳一戳，好运加满！😆
 > **"点过 `Star` 的朋友，颜值与智慧双双在线！✨"**
