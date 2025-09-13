@@ -42,7 +42,15 @@ cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/{rk3399.dtsi,rk3399-opp.dtsi,rk33
 # 移植RK3566示例，其他35XX可模仿
 # ================================================================
 # 增加jp-tvbox设备
-
+echo -e "\\ndefine Device/jp_jp-tvbox
+\$(call Device/Legacy/rk3566,\$(1))
+  DEVICE_VENDOR := Jp
+  DEVICE_MODEL := JP TVBOX
+  DEVICE_DTS := rk3568/rk3566-jp-tvbox
+  SUPPORTED_DEVICES += jp,jp-tvbox
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
+endef
+TARGET_DEVICES += jp_jp-tvbox" >> target/linux/rockchip/image/legacy.mk
 
 
 
