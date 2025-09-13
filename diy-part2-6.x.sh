@@ -15,8 +15,8 @@
 mkdir -p package/base-files/files/lib/firmware/brcm
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
-# 移植RK3399示例 其他3399可模仿
-# ==========================================================
+# 移植RK3399示例，其他3399可模仿
+# ================================================================
 # 增加tvi3315a设备
 echo -e "\\ndefine Device/tvi_tvi3315a
   DEVICE_VENDOR := Tvi
@@ -36,11 +36,11 @@ cp -f $GITHUB_WORKSPACE/configfiles/uboot-rockchip/tvi3315a-rk3399_defconfig pac
 
 # 复制dts到files/arch/arm64/boot/dts/rockchip
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/{rk3399.dtsi,rk3399-opp.dtsi,rk3399-tvi3315a.dts} target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
-# ==========================================================
+# ================================================================
 # RK3399示例结束
 
-# 移植RK3566示例 其他35XX可模仿
-# ==========================================================
+# 移植RK3566示例，其他35XX可模仿
+# ================================================================
 # 增加jp-tvbox设备
 
 
@@ -50,7 +50,7 @@ cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/{rk3399.dtsi,rk3399-opp.dtsi,rk33
 
 
 
-# ==========================================================
+# ================================================================
 # RK35XX示例结束
 
 # 添加dtb补丁到target/linux/rockchip/patches-6.6
