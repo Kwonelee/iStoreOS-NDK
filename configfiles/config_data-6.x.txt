@@ -1,1 +1,2 @@
 CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_tvi_tvi3315a=y
+CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_jp_jp-tvbox=y
