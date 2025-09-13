@@ -42,7 +42,7 @@ cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3399/{rk3399.dtsi,rk3399-opp.dtsi,rk33
 # ================================================================
 
 # ================================================================
-# 移植RK3566示例，其他35XX可模仿
+# 移植RK3566示例，其他35xx可模仿
 # ================================================================
 # 增加jp-tvbox设备
 echo -e "\\ndefine Device/jp_jp-tvbox
@@ -58,11 +58,11 @@ TARGET_DEVICES += jp_jp-tvbox" >> target/linux/rockchip/image/legacy.mk
 # 复制dts到target/linux/rockchip/dts/rk3568
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3568/rk3566-jp-tvbox.dts target/linux/rockchip/dts/rk3568/
 # ================================================================
-# RK35XX示例结束
+# RK35xx示例结束
 # ================================================================
 
 # 添加dtb补丁到target/linux/rockchip/patches-6.6
-cp -f $GITHUB_WORKSPACE/configfiles/patch/800-add-rk3399-tvi3315a-dtb-to-makefile.patch target/linux/rockchip/patches-6.6/
+cp -f $GITHUB_WORKSPACE/configfiles/patch/800-add-rk3399-rk35xx-dtb-to-makefile.patch target/linux/rockchip/patches-6.6/
 
 # 定时限速插件
 #git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
