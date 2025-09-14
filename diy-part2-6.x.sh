@@ -58,7 +58,7 @@ echo -e "\\ndefine Device/jp_jp-tvbox
 endef
 TARGET_DEVICES += jp_jp-tvbox" >> target/linux/rockchip/image/legacy.mk
 
-# 增加oec-turbo设备；据说该设备电路板上印有oec L2.1或1.0啥的，可能会有影响！
+# 增加oec-turbo设备；据说该设备电路板上印有oec L2.1或1.0啥的，以及原版和改内存CPU版本啥的。需自行判断其影响！
 echo -e "\\ndefine Device/wxy_oec-turbo
 \$(call Device/Legacy/rk3566,\$(1))
   DEVICE_VENDOR := Wxy
