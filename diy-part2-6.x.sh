@@ -11,6 +11,9 @@
 #echo "CONFIG_PSI=y
 #CONFIG_KPROBES=y" >> target/linux/rockchip/armv8/config-6.6
 
+# 移除待替换/非必要包
+rm -rf feeds/third_party/luci-app-LingTiGameAcc
+
 # 集成无线
 mkdir -p package/base-files/files/lib/firmware/brcm
 cp -a $GITHUB_WORKSPACE/configfiles/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
