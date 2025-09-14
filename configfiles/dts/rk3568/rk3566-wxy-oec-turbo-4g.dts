@@ -15,11 +15,11 @@
 #include <dt-bindings/soc/rockchip,vop2.h>
 #include <dt-bindings/clock/rk3568-cru.h>
 #include <dt-bindings/power/rk3568-power.h>
-#include "rk3566.dtsi"
+#include <rockchip/rk3566.dtsi>
 
 / {
-	compatible = "rockchip,rk3566-wxy-oec-turbo-4g", "rockchip,rk3566";
-	model = "Rockchip RK3566 WXY OEC Turbo board";
+	model = "WXY OEC Turbo";
+	compatible = "wxy,oec-turbo", "rockchip,rk3566";
 
 	aliases {
 		ethernet0 = &gmac1;
