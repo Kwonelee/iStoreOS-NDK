@@ -20,12 +20,10 @@
 | turboacc网络加速         | ⏳   | [luci-app-turboacc](https://github.com/chenmozhijin/turboacc)             | 不会哦！求教 |
 | OTA在线升级	             | ⏳   | [istoreos-ota](https://github.com/Kwonelee/istoreos-ota)                 | 不会哦！求教 |
 | 其他                     | ⏳   |                                                                          | 不会哦！求教 |
+
 ✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
 
 # 😊Supported devices
-
-✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
-
 | 设备       | 状态   | 包名                                                                    | 备注               |
 | ---------- | ------ | ----------------------------------------------------------------------- | ------------------ |
 | station-m2 |  ✅    | istoreos-rockchip-armv8-firefly_station-m2-squashfs-sysupgrade.img.gz  | 🟢 已测试          |
@@ -33,6 +31,8 @@
 | jp-tvbox   |  ✅    | istoreos-rockchip-armv8-jp_jp-tvbox-squashfs-sysupgrade.img.gz         | ⭕ 未测试          |
 | oec-turbo  |  ✅    | istoreos-rockchip-armv8-wxy_oec-turbo-squashfs-sysupgrade.img.gz       | ⭕ 未测试          |
 | 其他       |  ⏳    |                                                                         |                    |
+
+✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
 
 # 🤗Screenshot
 ![screenshots](./configfiles/screenshot/screenshot2.png)
