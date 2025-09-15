@@ -13,16 +13,16 @@
 
 ✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
 
-| 插件                     | 状态 | 源码地址                                                          | 备注         |
-|:------------------------:|:----:|:------------------------------------------------------------------:|:------------:|
-| ramfree释放内存          | ⏳   | 不知道在哪哦！                                                      | 不会哦！求教 |
-| FileBrowser文件浏览      | ⏳   | 不知道在哪哦！                                                      | 不会哦！求教 |
-| lucky                    | ⏳   | [luci-app-lucky](https://github.com/gdy666/luci-app-lucky)         | 不会哦！求教 |
-| openlist2                | ⏳   | [luci-app-openlist2](https://github.com/sbwml/luci-app-openlist2)  | 不会哦！求教 |
-| adguardhome              | ⏳   | [adguardhome](https://github.com/sirpdboy/luci-app-adguardhome)    | 不会哦！求教 |
-| turboacc网络加速         | ⏳   | [turboacc](https://github.com/chenmozhijin/turboacc)               | 不会哦！求教 |
-| OTA在线升级	             | ⏳   | [istoreos-ota](https://github.com/Kwonelee/istoreos-ota)           | 不会哦！求教 |
-| 其他                     | ⏳   |                                                                    | 不会哦！求教 |
+| 插件                     | 状态 | 源码地址                                                                   | 备注         |
+|:------------------------:|:----:|:-------------------------------------------------------------------------:|:------------:|
+| ramfree释放内存          | ⏳   | 不知道在哪哦！                                                             | 不会哦！求教 |
+| FileBrowser文件浏览      | ⏳   | 不知道在哪哦！                                                             | 不会哦！求教 |
+| lucky                    | ⏳   | [luci-app-lucky](https://github.com/gdy666/luci-app-lucky)               | 不会哦！求教 |
+| openlist2                | ⏳   | [luci-app-openlist2](https://github.com/sbwml/luci-app-openlist2)        | 不会哦！求教 |
+| adguardhome              | ⏳   | [luci-app-adguardhome](https://github.com/sirpdboy/luci-app-adguardhome) | 不会哦！求教 |
+| turboacc网络加速         | ⏳   | [luci-app-turboacc](https://github.com/chenmozhijin/turboacc)             | 不会哦！求教 |
+| OTA在线升级	             | ⏳   | [istoreos-ota](https://github.com/Kwonelee/istoreos-ota)                 | 不会哦！求教 |
+| 其他                     | ⏳   |                                                                          | 不会哦！求教 |
 
 # 😊Supported devices
 
