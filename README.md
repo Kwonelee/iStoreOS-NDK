@@ -21,6 +21,7 @@
 | lucky                    | ⏳   |                                                                    | 不会哦！求教 |
 | openlist2                | ⏳   | [luci-app-openlist2](https://github.com/sbwml/luci-app-openlist2)  | 不会哦！求教 |
 | turboacc网络加速         | ⏳   |                                                                    | 不会哦！求教 |
+| 其他                     | ⏳   |                                                                    | 不会哦！求教 |
 
 # 🤗Supported devices
 
