@@ -13,22 +13,23 @@
 
 ✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
 
-| 内置插件                 | 状态 | 项目地址                | 备注         |
-|:------------------------:|:----:|:-----------------------:|:------------:|
-| OTA在线升级	           | ⏳   |                         | 不会哦！求教 |
-| ramfree释放内存          | ⏳   |                         | 不会哦！求教 |
-| FileBrowser文件浏览      | ⏳   |                         | 不会哦！求教 |
-| lucky                    | ⏳   |                         | 不会哦！求教 |
-| openlist2                | ⏳   |                         | 不会哦！求教 |
-| turboacc网络加速         | ⏳   |                         | 不会哦！求教 |
+| 内置插件                 | 状态 | 项目地址                                                          | 备注         |
+|:------------------------:|:----:|:------------------------------------------------------------------:|:------------:|
+| OTA在线升级	             | ⏳   |                                                                    | 不会哦！求教 |
+| ramfree释放内存          | ⏳   |                                                                    | 不会哦！求教 |
+| FileBrowser文件浏览      | ⏳   |                                                                    | 不会哦！求教 |
+| lucky                    | ⏳   |                                                                    | 不会哦！求教 |
+| openlist2                | ⏳   | [luci-app-openlist2](https://github.com/sbwml/luci-app-openlist2)  | 不会哦！求教 |
+| turboacc网络加速         | ⏳   |                                                                    | 不会哦！求教 |
 
-# 🤗支持设备计划
+# 🤗Supported devices
 | 设备       | 状态   | 包名                                                                    | 备注               |
 | ---------- | ------ | ----------------------------------------------------------------------- | ------------------ |
 | station-m2 |  ✅    | istoreos-rockchip-armv8-firefly_station-m2-squashfs-sysupgrade.img.gz  | 🟢 已测试          |
 | tvi3315a   |  ✅    | istoreos-rockchip-armv8-tvi_tvi3315a-squashfs-sysupgrade.img.gz        | 🟢 已测试          |
 | jp-tvbox   |  ✅    | istoreos-rockchip-armv8-jp_jp-tvbox-squashfs-sysupgrade.img.gz         | ⭕ 未测试          |
 | oec-turbo  |  ✅    | istoreos-rockchip-armv8-wxy_oec-turbo-squashfs-sysupgrade.img.gz       | ⭕ 未测试          |
+| 其他       |  ⏳    | istoreos-rockchip-armv8-xx_xxx-xxxx-squashfs-sysupgrade.img.gz          |                    |
 
 # 🤗Screenshot
 ![screenshots](./configfiles/screenshot/screenshot2.png)
