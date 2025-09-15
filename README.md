@@ -9,10 +9,28 @@
 
 > **使用此仓库必须设置机密token，Actions云编译固件时需要用到，通常在仓库设置里面。机密键名为 `GH_TOKEN`（严禁在仓库可视代码中填写，否则后果自负）**
 
+# 🤗内置插件计划
+| 内置插件                 | 状态 | 项目地址                | 备注         |
+|:------------------------:|:----:|:-----------------------:|:------------:|
+| OTA在线升级	           | ⏳   |                         | 不会哦！求教 |
+| ramfree释放内存          | ⏳   |                         | 不会哦！求教 |
+| FileBrowser文件浏览      | ⏳   |                         | 不会哦！求教 |
+| lucky                    | ⏳   |                         | 不会哦！求教 |
+| openlist2                | ⏳   |                         | 不会哦！求教 |
+| turboacc网络加速         | ⏳   |                         | 不会哦！求教 |
+
+✅ 支持     ⏳ 计划中     ❌ 不支持
+
+# 🤗支持设备计划
+| 设备       | 状态   | 包名                                                                    | 备注               |
+| ---------- | ------ | ----------------------------------------------------------------------- | ------------------ |
+| station-m2 |  ✅    | istoreos-rockchip-armv8-firefly_station-m2-squashfs-sysupgrade.img.gz  | 🟢 已测试          |
+| tvi3315a   |  ✅    | istoreos-rockchip-armv8-tvi_tvi3315a-squashfs-sysupgrade.img.gz        | 🟢 已测试          |
+| jp-tvbox   |  ✅    | istoreos-rockchip-armv8-jp_jp-tvbox-squashfs-sysupgrade.img.gz         | ⭕ 未测试          |
+| oec-turbo  |  ✅    | istoreos-rockchip-armv8-wxy_oec-turbo-squashfs-sysupgrade.img.gz       | ⭕ 未测试          |
+
 # 🤗Screenshot
-<p align="center">
-    <img src="https://raw.githubusercontent.com/Kwonelee/iStoreOS-NDK/main/configfiles/screenshot/screenshot2.png">
-</p>
+![screenshots](./configfiles/screenshot/screenshot2.png)
 
 # 🌟Star戳一戳，好运加满！😆
 > **"点过 `Star` 的朋友，颜值与智慧双双在线！✨"**
