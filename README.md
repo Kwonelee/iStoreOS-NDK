@@ -32,7 +32,7 @@
 | tvi3315a   |  ✅    | istoreos-rockchip-armv8-tvi_tvi3315a-squashfs-sysupgrade.img.gz        | 🟢 已测试          |
 | jp-tvbox   |  ✅    | istoreos-rockchip-armv8-jp_jp-tvbox-squashfs-sysupgrade.img.gz         | ⭕ 未测试          |
 | oec-turbo  |  ✅    | istoreos-rockchip-armv8-wxy_oec-turbo-squashfs-sysupgrade.img.gz       | ⭕ 未测试          |
-| 其他       |  ⏳    | istoreos-rockchip-armv8-xx_xxx-xxxx-squashfs-sysupgrade.img.gz          |                    |
+| 其他       |  ⏳    |                                                                         |                    |
 
 # 🤗Screenshot
 ![screenshots](./configfiles/screenshot/screenshot2.png)
