@@ -10,9 +10,6 @@
 > **使用此仓库必须设置机密token，Actions云编译固件时需要用到，通常在仓库设置里面。机密键名为 `GH_TOKEN`（严禁在仓库可视代码中填写，否则后果自负）**
 
 # 😅Built-in package plan
-
-✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
-
 | 插件                     | 状态 | 源码地址                                                                   | 备注         |
 |:------------------------:|:----:|:-------------------------------------------------------------------------:|:------------:|
 | ramfree释放内存          | ⏳   | 不知道在哪哦！                                                             | 不会哦！求教 |
@@ -23,6 +20,7 @@
 | turboacc网络加速         | ⏳   | [luci-app-turboacc](https://github.com/chenmozhijin/turboacc)             | 不会哦！求教 |
 | OTA在线升级	             | ⏳   | [istoreos-ota](https://github.com/Kwonelee/istoreos-ota)                 | 不会哦！求教 |
 | 其他                     | ⏳   |                                                                          | 不会哦！求教 |
+✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
 
 # 😊Supported devices
 
