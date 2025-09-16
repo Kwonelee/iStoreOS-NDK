@@ -24,6 +24,19 @@ jobs:
            content=$(cat ${GITHUB_WORKSPACE}/configfiles/config_data-6.x.txt)
            configdata=$(echo "$content" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
            # ------------禁用非必要软件包，由AI生成------------
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_cyber_cyber3588-aib=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_cyber_cyber3588-aib is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hinlink_h88k=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hinlink_h88k is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hinlink_opc-h6xk=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hinlink_opc-h6xk is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hlink_h28k=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hlink_h28k is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_lyt_t68m=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_lyt_t68m is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_lyt_t88m=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_lyt_t88m is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_e20c=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_e20c is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_e24c=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_e24c is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_e52c=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_e52c is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_e54c=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_radxa_e54c is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_roceos_k60pro=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_roceos_k60pro is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_xunlong_orangepi-5-plus=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_xunlong_orangepi-5-plus is not set/' ./armv8/.config
+           
            sed -i 's/^CONFIG_PACKAGE_adb=y/# CONFIG_PACKAGE_adb is not set/' ./armv8/.config
            sed -i 's/^CONFIG_PACKAGE_adb-enablemodem=y/# CONFIG_PACKAGE_adb-enablemodem is not set/' ./armv8/.config
            sed -i 's/^CONFIG_PACKAGE_appfilter=y/# CONFIG_PACKAGE_appfilter is not set/' ./armv8/.config
