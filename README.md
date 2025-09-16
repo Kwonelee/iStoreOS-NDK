@@ -20,6 +20,7 @@
 | turboacc网络加速         | ⏳   | [luci-app-turboacc](https://github.com/chenmozhijin/turboacc)             | 不会哦！求教 |
 | OTA在线升级	             | ⏳   | [istoreos-ota](https://github.com/Kwonelee/istoreos-ota)                 | 不会哦！求教 |
 | istoreos-ipk	           | ⏳   | [istoreos-ipk](https://github.com/Jaykwok2999/istoreos-ipk)              | 不会哦！求教 |
+| packages	               | ⏳   | [packages](https://github.com/sos801107/packages)                        | 不会哦！求教 |
 | 其他                     | ⏳   |                                                                          | 不会哦！求教 |
 
 ✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
