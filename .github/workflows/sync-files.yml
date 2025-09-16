@@ -25,6 +25,7 @@ jobs:
            configdata=$(echo "$content" | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
            # ------------禁用非必要软件包，由AI生成------------
            sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_cyber_cyber3588-aib=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_cyber_cyber3588-aib is not set/' ./armv8/.config
+           sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_fastrhino_r6xs=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_fastrhino_r6xs is not set/' ./armv8/.config
            sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hinlink_h88k=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hinlink_h88k is not set/' ./armv8/.config
            sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hinlink_opc-h6xk=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hinlink_opc-h6xk is not set/' ./armv8/.config
            sed -i 's/^CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hlink_h28k=y/# CONFIG_TARGET_DEVICE_rockchip_armv8_DEVICE_hlink_h28k is not set/' ./armv8/.config
