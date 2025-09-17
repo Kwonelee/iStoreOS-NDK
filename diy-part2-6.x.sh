@@ -61,20 +61,8 @@ echo -e "\\ndefine Device/jp_jp-tvbox
 endef
 TARGET_DEVICES += jp_jp-tvbox" >> target/linux/rockchip/image/legacy.mk
 
-# 增加oec-turbo设备；据说该设备电路板上印有oec L2.1或1.0啥的，以及原版和改内存CPU版本啥的。需自行判断其影响！
-echo -e "\\ndefine Device/wxy_oec-turbo
-\$(call Device/Legacy/rk3566,\$(1))
-  DEVICE_VENDOR := Wxy
-  DEVICE_MODEL := OEC TURBO
-  DEVICE_DTS := rk3568/rk3566-wxy-oec-turbo
-  SUPPORTED_DEVICES += wxy,oec-turbo
-  DEVICE_PACKAGES := kmod-scsi-core
-endef
-TARGET_DEVICES += wxy_oec-turbo" >> target/linux/rockchip/image/legacy.mk
-
 # 复制dts到target/linux/rockchip/dts/rk3568
 cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3568/rk3566-jp-tvbox.dts target/linux/rockchip/dts/rk3568/
-cp -f $GITHUB_WORKSPACE/configfiles/dts/rk3568/rk3566-wxy-oec-turbo.dts target/linux/rockchip/dts/rk3568/
 # ================================================================
 # RK35xx示例结束
 # ================================================================
