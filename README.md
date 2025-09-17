@@ -31,7 +31,6 @@
 | station-m2 |  ✅    | istoreos-rockchip-armv8-firefly_station-m2-squashfs-sysupgrade.img.gz  | 🟢 已测试          |
 | tvi3315a   |  ✅    | istoreos-rockchip-armv8-tvi_tvi3315a-squashfs-sysupgrade.img.gz        | 🟢 已测试          |
 | jp-tvbox   |  ✅    | istoreos-rockchip-armv8-jp_jp-tvbox-squashfs-sysupgrade.img.gz         | ⭕ 未测试          |
-| oec-turbo  |  ✅    | istoreos-rockchip-armv8-wxy_oec-turbo-squashfs-sysupgrade.img.gz       | ⭕ 未测试          |
 | 其他       |  ⏳    |                                                                         |                    |
 
 ✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
