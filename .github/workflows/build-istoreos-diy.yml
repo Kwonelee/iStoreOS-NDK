@@ -14,7 +14,7 @@ on:
 env:
   REPO_URL: https://github.com/istoreos/istoreos.git
   REPO_BRANCH: istoreos-24.10
-  CONFIG_FILE: configs/rockchip_iStoreOS.config
+  CONFIG_FILE: armv8/diy-istoreos.config
   DIY_SCRIPT: diy/diy-istoreos.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
