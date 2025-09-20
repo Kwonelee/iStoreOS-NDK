@@ -16,8 +16,8 @@ env:
   # REPO_BRANCH: main
   FEEDS_CONF: feeds.conf
   CONFIG_FILE: .config
-  DIY_P1_SH: diy/diy-part1-6.x.sh
-  DIY_P2_SH: diy/diy-part2-6.x.sh
+  DIY_P1_SH: diy/diy-6.x-part1.sh
+  DIY_P2_SH: diy/diy-6.x-part2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
