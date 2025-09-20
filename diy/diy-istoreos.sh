@@ -100,7 +100,7 @@ git_sparse_clone main https://github.com/kiddin9/kwrt-packages tailscale
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages luci-app-upnp
 git_sparse_clone main https://github.com/kiddin9/kwrt-packages miniupnpd
 
-git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
+git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
 #git_sparse_clone main https://github.com/sos801107/packages sing-box
 #git_sparse_clone main https://github.com/sos801107/packages istoreos-files
