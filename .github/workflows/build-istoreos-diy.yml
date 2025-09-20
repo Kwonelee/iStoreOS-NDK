@@ -170,18 +170,16 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:
-        name: iStoreOS-24.10.2-Rockchip for ${{ env.DATE }}
         allowUpdates: true
-        #tag: ${{ env.FIRMWARE_TAG }}
         tag: iStoreOS-DIY
         token: ${{ secrets.GH_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/istoreos-24.10.2*.img.gz
         body: |
           ### 📒 固件信息
-          💻 平台架构: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
-          📂 固件源码: ${{ env.REPO_URL }}
-          🌳 源码分支: ${{ env.REPO_BRANCH }}
-          🚀 内核版本: ${{ env.KERNEL }}
-          🌐 默认地址: 192.168.1.1
-          👤 用户名: root
-          🔒 默认密码: 空
+          🖥️ Architecture: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
+          
+          🔀 Branch: ${{ env.REPO_BRANCH }}
+          
+          📂 Source Code: ${{ env.REPO_URL }}
+          
+          🧠 内核版本: ${{ env.KERNEL }}
