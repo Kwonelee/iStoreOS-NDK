@@ -169,7 +169,6 @@ jobs:
         token: ${{ secrets.GH_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/istoreos-24.10.2*.img.gz
         body: |
-          ### 📒 固件信息
           🖥️ Architecture: ${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
           
           🔀 Branch: ${{ env.REPO_BRANCH }}
