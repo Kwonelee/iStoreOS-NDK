@@ -108,11 +108,11 @@ jobs:
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
-        chmod +x $GITHUB_WORKSPACE/scripts/*.sh
+        chmod +x $GITHUB_WORKSPACE/configfiles/shell/*.sh
         chmod +x $DIY_SCRIPT
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
-        $GITHUB_WORKSPACE/scripts/preset-clash-core.sh $CLASH_KERNEL
+        $GITHUB_WORKSPACE/configfiles/shell/preset-clash-core.sh $CLASH_KERNEL
     - name: 下载软件包
       run: |
         cd $OPENWRT_PATH
@@ -146,19 +146,12 @@ jobs:
         mv istoreos-rockchip-armv8-easepi_ars4-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-easepi_ars4.img.gz
         mv istoreos-rockchip-armv8-easepi_r1-lite-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-easepi_r1-lite.img.gz
         mv istoreos-rockchip-armv8-easepi_r1-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-easepi_r1.img.gz
-        mv istoreos-rockchip-armv8-fastrhino_r6xs-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-fastrhino_r6xs.img.gz
         mv istoreos-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r2s.img.gz
         mv istoreos-rockchip-armv8-friendlyarm_nanopi-r3s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r3s.img.gz
         mv istoreos-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r4s.img.gz
         mv istoreos-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r4se.img.gz
         mv istoreos-rockchip-armv8-friendlyarm_nanopi-r5s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r5s.img.gz
         mv istoreos-rockchip-armv8-friendlyarm_nanopi-r6s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r6s.img.gz
-        mv istoreos-rockchip-armv8-hinlink_h88k-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-hinlink_h88k.img.gz
-        mv istoreos-rockchip-armv8-hinlink_opc-h6xk-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-hinlink_opc-h6xk.img.gz
-        mv istoreos-rockchip-armv8-radxa_e20c-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-radxa_e20c.img.gz
-        mv istoreos-rockchip-armv8-radxa_e52c-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-radxa_e52c.img.gz
-        mv istoreos-rockchip-armv8-radxa_e54c-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-radxa_e54c.img.gz
-        mv istoreos-rockchip-armv8-xunlong_orangepi-5-plus-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-xunlong_orangepi-5-plus.img.gz
         cat sha256sums
         cp $OPENWRT_PATH/.config build.config
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
