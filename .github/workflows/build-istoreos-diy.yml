@@ -173,7 +173,7 @@ jobs:
         name: iStoreOS-24.10.2-Rockchip for ${{ env.DATE }}
         allowUpdates: true
         #tag: ${{ env.FIRMWARE_TAG }}
-        tag: iStoreOS-Rockchip
+        tag: iStoreOS-DIY
         token: ${{ secrets.GH_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/istoreos-24.10.2*.img.gz
         body: |
@@ -185,4 +185,3 @@ jobs:
           🌐 默认地址: 192.168.1.1
           👤 用户名: root
           🔒 默认密码: 空
-          
