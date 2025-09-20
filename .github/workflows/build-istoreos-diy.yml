@@ -176,4 +176,4 @@ jobs:
           
           📂 Source Code: ${{ env.REPO_URL }}
           
-          🧠 内核版本: ${{ env.KERNEL }}
+          🧠 Kernel: ${{ env.KERNEL }}
