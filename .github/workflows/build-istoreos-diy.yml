@@ -143,15 +143,9 @@ jobs:
       if: steps.compile.outputs.status == 'success'
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
-        mv istoreos-rockchip-armv8-easepi_ars4-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-easepi_ars4.img.gz
-        mv istoreos-rockchip-armv8-easepi_r1-lite-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-easepi_r1-lite.img.gz
-        mv istoreos-rockchip-armv8-easepi_r1-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-easepi_r1.img.gz
-        mv istoreos-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r2s.img.gz
-        mv istoreos-rockchip-armv8-friendlyarm_nanopi-r3s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r3s.img.gz
-        mv istoreos-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r4s.img.gz
-        mv istoreos-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r4se.img.gz
-        mv istoreos-rockchip-armv8-friendlyarm_nanopi-r5s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r5s.img.gz
-        mv istoreos-rockchip-armv8-friendlyarm_nanopi-r6s-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-friendlyarm_nanopi-r6s.img.gz
+        mv istoreos-rockchip-armv8-firefly_station-m2-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-firefly_station-m2-squashfs-sysupgrade.img.gz
+        mv istoreos-rockchip-armv8-tvi_tvi3315a-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-tvi_tvi3315a-squashfs-sysupgrade.img.gz
+        mv istoreos-rockchip-armv8-jp_jp-tvbox-squashfs-sysupgrade.img.gz istoreos-24.10.2-$(date +"%Y%m%d%H")-jp_jp-tvbox-squashfs-sysupgrade.img.gz
         cat sha256sums
         cp $OPENWRT_PATH/.config build.config
         mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
