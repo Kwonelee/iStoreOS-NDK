@@ -1,14 +1,15 @@
-name: Builser-iStoreOS-24.10-Rockchip
+name: Build iStore OS diy
 
-#CI计划
 on:
-  #自动编译：当Auto-Clean运行完成后
-  workflow_run:
-    workflows: ["Auto-Clean"]
-    types:
-      - completed
-  #手动编译
+  repository_dispatch:
   workflow_dispatch:
+    # inputs:
+      # ssh:
+        # description: 'SSH connection to Actions'
+        # required: false
+        # default: 'false'
+  # schedule:
+   # - cron: 40 15 * * 3
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos.git
