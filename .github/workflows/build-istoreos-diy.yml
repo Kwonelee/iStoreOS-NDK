@@ -16,7 +16,7 @@ env:
   REPO_BRANCH: istoreos-24.10
   CONFIG_FILE: configs/rockchip_iStoreOS.config
   DIY_SCRIPT: diy/diy-istoreos.sh
-  CLASH_KERNEL: amd64
+  CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
